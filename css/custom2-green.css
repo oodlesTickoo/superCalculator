@@ -48,7 +48,15 @@ body {
 }
 
 .hollow-icon{
-    width: 28px;
+    width: 16px;
+    height: 38px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hollow-icon-heading{
+    width: 30px;
     height: 38px;
     display: block;
     margin-left: auto;
