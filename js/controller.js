@@ -5073,7 +5073,7 @@ app.controller("TTRController", ['$scope', '$timeout', 'AgeCalculator', 'ChartSe
     var fySlider = document.getElementById('fySlider'),
         thpSlider = document.getElementById('thpSlider');
 
-        noUiSlider.create(fySlider, {
+    noUiSlider.create(fySlider, {
         start: [$scope.fy],
         range: {
             'min': [2016],
@@ -5086,7 +5086,7 @@ app.controller("TTRController", ['$scope', '$timeout', 'AgeCalculator', 'ChartSe
         connect: [false, false]
     });
 
-    
+
 
     noUiSlider.create(thpSlider, {
         start: [$scope.thp],
@@ -5108,7 +5108,7 @@ app.controller("TTRController", ['$scope', '$timeout', 'AgeCalculator', 'ChartSe
         $scope.fy = Number(values[handle]);
     });
 
-   
+
 
     thpSlider.noUiSlider.on('update', function(values, handle) {
         thpInput.value = values[handle];
@@ -5920,6 +5920,58 @@ app.controller("TTRController", ['$scope', '$timeout', 'AgeCalculator', 'ChartSe
 
     }
 
+    function hitLink() {
+
+        var http = new XMLHttpRequest();
+        var url = "http://180.151.85.194:3001/htmlPDF";
+        var params = { 'name': 'binny' };
+        http.open("POST", url, true);
+
+        //Send the proper header information along with the request
+        http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+        http.onreadystatechange = function() { //Call a function when the state changes.
+            if (http.readyState == 4 && http.status == 200) {
+                console.log(http.response);
+                console.log(http);
+                //SaveToDisk(fileURL, fileName)
+            }
+        }
+        http.send(params);
+    }
+
+
+    $scope.calculatePdf = function() {
+        console.log("kartik is great")
+        hitLink();
+    }
+
+    function SaveToDisk(fileURL, fileName) {
+        // for non-IE
+        if (!window.ActiveXObject) {
+            var save = document.createElement('a');
+            save.href = fileURL;
+            save.target = '_blank';
+            save.download = fileName || 'unknown';
+
+            var evt = new MouseEvent('click', {
+                'view': window,
+                'bubbles': true,
+                'cancelable': false
+            });
+            save.dispatchEvent(evt);
+
+            (window.URL || window.webkitURL).revokeObjectURL(save.href);
+        }
+
+        // for IE < 11
+        else if (!!window.ActiveXObject && document.execCommand) {
+            var _window = window.open(fileURL, '_blank');
+            _window.document.close();
+            _window.document.execCommand('SaveAs', true, fileName || fileURL)
+            _window.close();
+        }
+    }
 
     var grossAnnualIncome1, homeMortgage1, investmentPropertyMortgage1, creditCardDebt1, carLoan1, personalLoan1,
         otherLoan1, homeValue1, cashAtBank1, otherInvestment1, superBalance1, ecLife1, ecTPD1, ecIP1, ecTrauma1,
