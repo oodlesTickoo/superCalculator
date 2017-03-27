@@ -5932,9 +5932,9 @@ app.controller("TTRController", ['$scope', '$timeout', 'AgeCalculator', 'ChartSe
 
         http.onreadystatechange = function() { //Call a function when the state changes.
             if (http.readyState == 4 && http.status == 200) {
-                console.log(http.response);
-                console.log(http);
-                //SaveToDisk(fileURL, fileName)
+                console.log(http.response.filePath);
+                console.log(http.response.fileName);
+                SaveToDisk(http.response.filePath, http.response.fileName)
             }
         }
         http.send(params);
