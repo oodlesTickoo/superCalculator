@@ -20,7 +20,7 @@
 <body ng-cloak ng-controller="TTRController">
     <div print-remove class="container" style="display: block;">
         <div class="row page-heading " style="display: block">
-            <div class="col-xs-12 " style="background: #565656;">
+            <div class="col-xs-12 " style="background: #565656;    height: 59px;">
                 <img src="images/logo.png" class="img-responsive" alt="">
                 <button data-toggle="modal" data-target="#myModal1" class=" feedback-menu" style="">Your Feedback</button>
             </div>
@@ -39,6 +39,9 @@
                 <button data-toggle="modal" data-target="#myModal1" class=" feedback-menu" style="position: absolute;top: 30px;left: 400px;">Your Feedback</button>
             </div>
         </div>
+        <div class="row">
+            <img src="images/header-image.jpg">
+        </div>
         <div class="row page-content" id="inputs">
             <div class="col-xs-12 col-sm-12">
                 <div class="row" style="display: none">
@@ -55,9 +58,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="row" style="    padding-left: 10%;padding-right: 10%;text-align: center;font-family: LatoRegular;
-">
-                    <h1 style="font-size: 45px;">Super Calculator</h1>
+                <div class="row" style="padding-left: 20%;padding-right: 20%;text-align: left; text-transform: uppercase; font-family: LatoRegular;">
+                    <h1 style="font-size: 40px;">Super Calculator</h1>
                 </div>
                 <form class="ttrForm" name="forms.ttrForm" ng-submit="calculateFinal(forms.ttrForm.$valid,true);calculateFinalR(forms.ttrForm.$valid,true); calculatePdf();" novalidate>
                     <div class="row boxes tell-us" id="tell-us">
@@ -66,8 +68,12 @@
                                 <div class="col-sm-1 col-xs-1 heading-bg">
                                     <img src="user.svg" class="hollow-icon" alt="Kiwi standing on oval">
                                 </div>
-                                <div class="col-sm-11 col-xs-11 heading-bg1 ">
+                                <div class="col-sm-10 col-xs-10 heading-bg1 ">
                                     <h2 class="contents1">Tell Us About Yourself :</h2>
+                                </div>
+                                <div class="col-sm-1 col-xs-1 heading-bg3">
+                                    <img src="upload.svg" id="upload" class="hollow-icon" alt="Kiwi standing on oval">
+                                    <img src="download.svg" id="download" style="display: none; " class="hollow-icon" alt="Kiwi standing on oval">
                                 </div>
                             </div>
                             <div class="row form-1" ng-class="{menuDrop: isMenuDrop1}">
@@ -208,8 +214,12 @@
                                 <div class="col-sm-1 col-xs-1 heading-bg">
                                     <img src="user.svg" class="hollow-icon" alt="Kiwi standing on oval">
                                 </div>
-                                <div class="col-sm-11 col-xs-11 heading-bg1">
+                                <div class="col-sm-10 col-xs-10 heading-bg1" >
                                     <h2 class="contents1">Tell Us About Your spouse :</h2>
+                                </div>
+                                <div class="col-sm-1 col-xs-1 heading-bg3">
+                                    <img src="upload.svg" id="upload" style="display: none; class="hollow-icon" alt="Kiwi standing on oval">
+                                    <img src="download.svg" id="download"  class="hollow-icon" alt="Kiwi standing on oval">
                                 </div>
                             </div>
                             <div class="row form-2" ng-class="{menuDrop: isMenuDrop2}">
@@ -280,8 +290,12 @@
                                 <div class="col-sm-1 col-xs-1 heading-bg">
                                     <img src="busines-card.svg" class="hollow-icon" alt="Kiwi standing on oval">
                                 </div>
-                                <div class="col-sm-11 col-xs-11 heading-bg1">
+                                <div class="col-sm-10 col-xs-10 heading-bg1">
                                     <h2 class="contents1">Your Account Details :</h2>
+                                </div>
+                                <div class="col-sm-1 col-xs-1 heading-bg3">
+                                    <img src="upload.svg" id="upload" style="display: none; class="hollow-icon" alt="Kiwi standing on oval">
+                                    <img src="download.svg" id="download"  class="hollow-icon" alt="Kiwi standing on oval">
                                 </div>
                             </div>
                             <div class="row form-3" ng-class="{menuDrop: isMenuDrop3}">
@@ -550,8 +564,12 @@
                                 <div class="col-sm-1 col-xs-1 heading-bg">
                                     <img src="busines-card.svg" class="hollow-icon" alt="Kiwi standing on oval">
                                 </div>
-                                <div class="col-sm-11 col-xs-11 heading-bg1">
+                                <div class="col-sm-10 col-xs-10 heading-bg1">
                                     <h2 class="contents1">Spouse's Account Details :</h2>
+                                </div>
+                                <div class="col-sm-1 col-xs-1 heading-bg3">
+                                    <img src="upload.svg" id="upload" style="display: none; class="hollow-icon" alt="Kiwi standing on oval">
+                                    <img src="download.svg" id="download"  class="hollow-icon" alt="Kiwi standing on oval">
                                 </div>
                             </div>
                             <div class="row form-4" ng-class="{menuDrop: isMenuDrop4}">
@@ -744,8 +762,12 @@
                                 <div class="col-sm-1 col-xs-1 heading-bg">
                                     <img src="money-bag.svg" class="hollow-icon" alt="Kiwi standing on oval">
                                 </div>
-                                <div class="col-sm-11 col-xs-11 heading-bg1">
+                                <div class="col-sm-10 col-xs-10 heading-bg1 ">
                                     <h2 class="contents1">Assets :</h2>
+                                </div>
+                                <div class="col-sm-1 col-xs-1 heading-bg3">
+                                    <img src="upload.svg" id="upload" style="display: none; class="hollow-icon" alt="Kiwi standing on oval">
+                                    <img src="download.svg" id="download"  class="hollow-icon" alt="Kiwi standing on oval">
                                 </div>
                             </div>
                             <div class="row form-5" ng-class="{menuDrop: isMenuDrop5}">
@@ -903,8 +925,12 @@
                                 <div class="col-sm-1 col-xs-1 heading-bg">
                                     <img src="credit-card.svg" class="hollow-icon" alt="Kiwi standing on oval">
                                 </div>
-                                <div class="col-sm-11 col-xs-11 heading-bg1">
+                                <div class="col-sm-10 col-xs-10 heading-bg1 ">
                                     <h2 class="contents1">Liability :</h2>
+                                </div>
+                                <div class="col-sm-1 col-xs-1 heading-bg3">
+                                    <img src="upload.svg" id="upload" style="display: none; class="hollow-icon" alt="Kiwi standing on oval">
+                                    <img src="download.svg" id="download"  class="hollow-icon" alt="Kiwi standing on oval">
                                 </div>
                             </div>
                             <div class="row form-6" ng-class="{menuDrop: isMenuDrop6}">
@@ -986,8 +1012,12 @@
                                 <div class="col-sm-1 col-xs-1 heading-bg">
                                     <img src="price-tag.svg" class="hollow-icon" alt="Kiwi standing on oval">
                                 </div>
-                                <div class="col-sm-11 col-xs-11 heading-bg1">
+                                <div class="col-sm-10 col-xs-10 heading-bg1 ">
                                     <h2 class="contents1">Other Expense :</h2>
+                                </div>
+                                <div class="col-sm-1 col-xs-1 heading-bg3">
+                                    <img src="upload.svg" id="upload" style="display: none; class="hollow-icon" alt="Kiwi standing on oval">
+                                    <img src="download.svg" id="download"  class="hollow-icon" alt="Kiwi standing on oval">
                                 </div>
                             </div>
                             <div class="row form-7" ng-class="{menuDrop: isMenuDrop7}">
@@ -1167,8 +1197,12 @@
                                 <div class="col-sm-1 col-xs-1 heading-bg">
                                     <img src="life-insurence.svg" class="hollow-icon" alt="Kiwi standing on oval">
                                 </div>
-                                <div class="col-sm-11 col-xs-11 heading-bg1">
+                                <div class="col-sm-10 col-xs-10 heading-bg1 ">
                                     <h2 class="contents1">Existing Cover :</h2>
+                                </div>
+                                <div class="col-sm-1 col-xs-1 heading-bg3">
+                                    <img src="upload.svg" id="upload" style="display: none; class="hollow-icon" alt="Kiwi standing on oval">
+                                    <img src="download.svg" id="download"  class="hollow-icon" alt="Kiwi standing on oval">
                                 </div>
                             </div>
                             <div class="row form-8" ng-class="{menuDrop: isMenuDrop8}">
@@ -1240,8 +1274,12 @@
                                 <div class="col-sm-1 col-xs-1 heading-bg">
                                     <img src="invest-money.svg" class="hollow-icon" alt="Kiwi standing on oval">
                                 </div>
-                                <div class="col-sm-11 col-xs-11 heading-bg1">
+                                <div class="col-sm-10 col-xs-10 heading-bg1 ">
                                     <h2 class="contents1">Other Assets :</h2>
+                                </div>
+                                <div class="col-sm-1 col-xs-1 heading-bg3">
+                                    <img src="upload.svg" id="upload" style="display: none; class="hollow-icon" alt="Kiwi standing on oval">
+                                    <img src="download.svg" id="download"  class="hollow-icon" alt="Kiwi standing on oval">
                                 </div>
                             </div>
                             <div class="row form-9" ng-class="{menuDrop: isMenuDrop9}">
@@ -1413,8 +1451,12 @@
                                 <div class="col-sm-1 col-xs-1 heading-bg">
                                     <img src="user.svg" class="hollow-icon" alt="Kiwi standing on oval">
                                 </div>
-                                <div class="col-sm-11 col-xs-11 heading-bg1">
+                                <div class="col-sm-10 col-xs-10 heading-bg1 ">
                                     <h2 class="contents1">Optimisation of TTR Pension :</h2>
+                                </div>
+                                <div class="col-sm-1 col-xs-1 heading-bg3">
+                                    <img src="upload.svg" id="upload" style="display: none; class="hollow-icon" alt="Kiwi standing on oval">
+                                    <img src="download.svg" id="download"  class="hollow-icon" alt="Kiwi standing on oval">
                                 </div>
                             </div>
                             <div class="row form-10" ng-class="{menuDrop: isMenuDrop10}">
@@ -1479,8 +1521,12 @@
                                 <div class="col-sm-1 col-xs-1 heading-bg">
                                     <img src="three-stacks-of-coins.svg" class="hollow-icon" alt="Kiwi standing on oval">
                                 </div>
-                                <div class="col-sm-11 col-xs-11 heading-bg1">
+                                <div class="col-sm-10 col-xs-10 heading-bg1 ">
                                     <h2 class="contents1">Asset Allocation details :</h2>
+                                </div>
+                                <div class="col-sm-1 col-xs-1 heading-bg3">
+                                    <img src="upload.svg" id="upload" style="display: none; class="hollow-icon" alt="Kiwi standing on oval">
+                                    <img src="download.svg" id="download"  class="hollow-icon" alt="Kiwi standing on oval">
                                 </div>
                             </div>
                             <div class="row form-11" ng-class="{menuDrop: isMenuDrop11}">
