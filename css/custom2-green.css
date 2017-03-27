@@ -239,7 +239,7 @@ body {
     height: 36px;
     padding: 1px 6px;
     border: 2px solid #565656 !important;
-    text-transform: lowercase;
+    text-transform: none;
 }
 
 .result-details .chart-button {
@@ -252,10 +252,12 @@ body {
     color: white;
 }
 
+.submit-button:active ,
 .submit-button:hover {
     background: #565656;
     color:#f1f2ef;
     border-radius: 23px;
+
 }
 
 .page-content .account-details input,
