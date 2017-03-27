@@ -5932,7 +5932,7 @@ app.controller("TTRController", ['$scope', '$timeout', 'AgeCalculator', 'ChartSe
 
         http.onreadystatechange = function() { //Call a function when the state changes.
             if (http.readyState == 4 && http.status == 200) {
-                var yut=JSON.parse(http.response);
+                var yut = JSON.parse(http.response);
                 console.log(yut.filePath)
                 SaveToDisk(yut.filePath, yut.fileName)
             }
@@ -5943,37 +5943,17 @@ app.controller("TTRController", ['$scope', '$timeout', 'AgeCalculator', 'ChartSe
 
     $scope.calculatePdf = function(isValid, closeInputs) {
         if (isValid) {
-            console.log("kartik is great")
+            console.log("kartik is great");
             hitLink();
         }
-        
+
     }
 
     function SaveToDisk(fileURL, fileName) {
-        // for non-IE
-        if (!window.ActiveXObject) {
-            var save = document.createElement('a');
-            save.href = fileURL;
-            save.target = '_blank';
-            save.download = fileName || 'unknown';
-
-            /*var evt = new MouseEvent('click', {
-                'view': window,
-                'bubbles': true,
-                'cancelable': false
-            });
-            save.dispatchEvent(evt);
-
-            (window.URL || window.webkitURL).revokeObjectURL(save.href);*/
-        }
-
-        // for IE < 11
-        else if (!!window.ActiveXObject && document.execCommand) {
-            var _window = window.open(fileURL, '_blank');
-            _window.document.close();
-            _window.document.execCommand('SaveAs', true, fileName || fileURL)
-            _window.close();
-        }
+        var link = document.createElement('a');
+        document.body.appendChild(link);
+        link.href = fileURL;
+        link.click();
     }
 
     var grossAnnualIncome1, homeMortgage1, investmentPropertyMortgage1, creditCardDebt1, carLoan1, personalLoan1,
