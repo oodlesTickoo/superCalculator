@@ -5934,16 +5934,19 @@ app.controller("TTRController", ['$scope', '$timeout', 'AgeCalculator', 'ChartSe
             if (http.readyState == 4 && http.status == 200) {
                 var yut=JSON.parse(http.response);
                 console.log(yut.filePath)
-                SaveToDisk(http.response.filePath, http.response.fileName)
+                SaveToDisk(yut.filePath, yut.fileName)
             }
         }
         http.send(params);
     }
 
 
-    $scope.calculatePdf = function() {
-        console.log("kartik is great")
-        hitLink();
+    $scope.calculatePdf = function(isValid, closeInputs) {
+        if (isValid) {
+            console.log("kartik is great")
+            hitLink();
+        }
+        
     }
 
     function SaveToDisk(fileURL, fileName) {
@@ -5954,14 +5957,14 @@ app.controller("TTRController", ['$scope', '$timeout', 'AgeCalculator', 'ChartSe
             save.target = '_blank';
             save.download = fileName || 'unknown';
 
-            var evt = new MouseEvent('click', {
+            /*var evt = new MouseEvent('click', {
                 'view': window,
                 'bubbles': true,
                 'cancelable': false
             });
             save.dispatchEvent(evt);
 
-            (window.URL || window.webkitURL).revokeObjectURL(save.href);
+            (window.URL || window.webkitURL).revokeObjectURL(save.href);*/
         }
 
         // for IE < 11
