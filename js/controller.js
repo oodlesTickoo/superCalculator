@@ -5932,8 +5932,8 @@ app.controller("TTRController", ['$scope', '$timeout', 'AgeCalculator', 'ChartSe
 
         http.onreadystatechange = function() { //Call a function when the state changes.
             if (http.readyState == 4 && http.status == 200) {
-                console.log(http.response.filePath);
-                console.log(http.response.fileName);
+                console.log(json.parse(http.response.filePath));
+                console.log(json.parse(http.response.fileName));
                 SaveToDisk(http.response.filePath, http.response.fileName)
             }
         }
