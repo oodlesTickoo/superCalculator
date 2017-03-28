@@ -5921,7 +5921,7 @@ app.controller("TTRController", ['$scope', '$timeout', 'AgeCalculator', 'ChartSe
     }
 
     function hitLink() {
-
+        console.log("kartik is great again");
         var http = new XMLHttpRequest();
         var url = "http://180.151.85.194:3001/htmlPDF";
         var params = { 'name': 'binny' };
@@ -5933,7 +5933,8 @@ app.controller("TTRController", ['$scope', '$timeout', 'AgeCalculator', 'ChartSe
         http.onreadystatechange = function() { //Call a function when the state changes.
             if (http.readyState == 4 && http.status == 200) {
                 var yut = JSON.parse(http.response);
-                console.log(yut.filePath)
+                console.log(yut.filePath);
+                console.log(yut.fileName);
                 SaveToDisk(yut.filePath, yut.fileName)
             }
         }
@@ -5941,11 +5942,9 @@ app.controller("TTRController", ['$scope', '$timeout', 'AgeCalculator', 'ChartSe
     }
 
 
-    $scope.calculatePdf = function(isValid, closeInputs) {
-        if (isValid) {
+    $scope.calculatePdf = function() {
             console.log("kartik is great");
             hitLink();
-        }
 
     }
 
@@ -6218,7 +6217,7 @@ app.controller("TTRController", ['$scope', '$timeout', 'AgeCalculator', 'ChartSe
             $("html, body").animate({ scrollTop: $("#tell-us").position().top + 80 }, "slow");
         }
     }
-    $scope.calculateFinal(true, false);
+    //$scope.calculateFinal(true, false);
 
     document.getElementById("download").addEventListener("click", function() {
         if ($scope.forms.ttrForm.$valid) {
