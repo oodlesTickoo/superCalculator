@@ -5957,6 +5957,7 @@ app.controller("TTRController", ['$scope', '$rootScope','$timeout', 'AgeCalculat
         link.target='_blank';
         link.click();
         $rootScope.isLoading = false;
+        $timeout(0);
     }
 
     var grossAnnualIncome1, homeMortgage1, investmentPropertyMortgage1, creditCardDebt1, carLoan1, personalLoan1,
