@@ -124,7 +124,11 @@ body {
     color: #565656;
 }
 
-
+.tumy{
+    display: table-cell;
+        width: 100px;
+    height: 80px;
+}
 .next-btn:hover{
     background-color: #565656; 
      color: #f1f2ef; 
