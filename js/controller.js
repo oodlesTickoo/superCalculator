@@ -1,4 +1,4 @@
-app.controller("TTRController", ['$scope', '$timeout', 'AgeCalculator', 'ChartServiceHc', 'DonutChartServiceHc', 'PdfMaker', function($scope, $timeout, AgeCalculator, ChartServiceHc, DonutChartServiceHc, PdfMaker) {
+app.controller("TTRController", ['$scope', '$rootScope','$timeout', 'AgeCalculator', 'ChartServiceHc', 'DonutChartServiceHc', 'PdfMaker', function($scope, $rootScope, $timeout, AgeCalculator, ChartServiceHc, DonutChartServiceHc, PdfMaker) {
 
     $scope.fundsOb = [
         { id: 0, name: 'Asgard Infinity Ewrap Super', annualPercentageFee: 1.25 },
@@ -5921,6 +5921,7 @@ app.controller("TTRController", ['$scope', '$timeout', 'AgeCalculator', 'ChartSe
     }
 
     function hitLink() {
+        $rootScope.isLoading = true;
         console.log("kartik is great again");
         var http = new XMLHttpRequest();
         var url = "http://180.151.85.194:3001/htmlPDF";
@@ -5932,6 +5933,7 @@ app.controller("TTRController", ['$scope', '$timeout', 'AgeCalculator', 'ChartSe
 
         http.onreadystatechange = function() { //Call a function when the state changes.
             if (http.readyState == 4 && http.status == 200) {
+
                 var yut = JSON.parse(http.response);
                 console.log(yut.filePath);
                 console.log(yut.fileName);
@@ -5952,7 +5954,9 @@ app.controller("TTRController", ['$scope', '$timeout', 'AgeCalculator', 'ChartSe
         var link = document.createElement('a');
         document.body.appendChild(link);
         link.href = fileURL;
+        link.target='_blank';
         link.click();
+        $rootScope.isLoading = false;
     }
 
     var grossAnnualIncome1, homeMortgage1, investmentPropertyMortgage1, creditCardDebt1, carLoan1, personalLoan1,
