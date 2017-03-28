@@ -5920,7 +5920,8 @@ app.controller("TTRController", ['$scope', '$rootScope','$timeout', 'AgeCalculat
 
     }
 
-    function hitLink() {
+    $scope.hitLink=function() {
+        $('#myModal4').modal('hide');
         $rootScope.isLoading = true;
         console.log("kartik is great again");
         var http = new XMLHttpRequest();
@@ -5945,8 +5946,7 @@ app.controller("TTRController", ['$scope', '$rootScope','$timeout', 'AgeCalculat
 
 
     $scope.calculatePdf = function() {
-            console.log("kartik is great");
-            hitLink();
+            $("#myModal4").modal('show');
 
     }
 
